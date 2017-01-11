@@ -9,7 +9,12 @@
                 return "I";
             }
 
-            return "II";
+            if (arabicNumber == 2)
+            {
+                return "II";
+            }
+
+            return "III";
         }
     }
 }
