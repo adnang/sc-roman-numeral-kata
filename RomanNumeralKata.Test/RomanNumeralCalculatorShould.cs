@@ -7,19 +7,14 @@ namespace RomanNumeralKata.Test
     public class RomanNumeralCalculatorShould
     {
         [TestCase(1, "I")]
+        [TestCase(2, "II")]
         public void ReturnRomanNumeral_WhenCalculatingRomanNumeral_GivenArabicNumber(int arabicNumber, string expectedRomanNumeral)
         {
-            RomanNumeralCalculator romanNumeralCalculator = new RomanNumeralCalculator();
-            string romanNumeral = romanNumeralCalculator.Calculate(arabicNumber);
-            romanNumeral.Should().Be(expectedRomanNumeral);
-        }
-    }
+            var romanNumeralCalculator = new RomanNumeralCalculator();
 
-    public class RomanNumeralCalculator
-    {
-        public string Calculate(int arabicNumber)
-        {
-            return "I";
+            var romanNumeral = romanNumeralCalculator.Calculate(arabicNumber);
+
+            romanNumeral.Should().Be(expectedRomanNumeral);
         }
     }
 }
