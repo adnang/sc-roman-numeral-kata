@@ -20,6 +20,8 @@ namespace RomanNumeralKata.Test
         [TestCase(20, "XX")]
         [TestCase(18, "XVIII")]
         [TestCase(50, "L")]
+        [TestCase(40, "XL")]
+        [TestCase(70, "LXX")]
         public void ReturnRomanNumeral_WhenCalculatingRomanNumeral_GivenArabicNumber(int arabicNumber, string expectedRomanNumeral)
         {
             var romanNumeralCalculator = new RomanNumeralCalculator();

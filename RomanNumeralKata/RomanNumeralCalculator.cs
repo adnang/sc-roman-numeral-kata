@@ -8,6 +8,7 @@ namespace RomanNumeralKata
         private readonly Dictionary<int, string> arabicToRoman = new Dictionary<int, string>
         {
             { 50, "L" },
+            { 40, "XL" },
             { 10, "X" },
             { 9, "IX" },
             { 5, "V" },
