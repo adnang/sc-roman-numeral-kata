@@ -7,7 +7,9 @@ namespace RomanNumeralKata
     {
         private readonly Dictionary<int, string> romanBy = new Dictionary<int, string>() 
         {
-            {4, "IV"}, {5, "V"}
+            {4, "IV"},
+            {5, "V"},
+            {6, "VI"}
         };
 
         public string Calculate(int arabicNumber)

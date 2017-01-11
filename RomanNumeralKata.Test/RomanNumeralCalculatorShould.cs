@@ -11,6 +11,7 @@ namespace RomanNumeralKata.Test
         [TestCase(3, "III")]
         [TestCase(4, "IV")]
         [TestCase(5, "V")]
+        [TestCase(6, "VI")]
         public void ReturnRomanNumeral_WhenCalculatingRomanNumeral_GivenArabicNumber(int arabicNumber, string expectedRomanNumeral)
         {
             var romanNumeralCalculator = new RomanNumeralCalculator();
