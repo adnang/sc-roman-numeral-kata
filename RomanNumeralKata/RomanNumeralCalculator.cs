@@ -2,19 +2,13 @@
 {
     public class RomanNumeralCalculator
     {
+        private readonly string[] romanNumbers = {"I", "II", "III"};
+
         public string Calculate(int arabicNumber)
         {
-            if (arabicNumber == 1)
-            {
-                return "I";
-            }
+            var index = arabicNumber - 1;
 
-            if (arabicNumber == 2)
-            {
-                return "II";
-            }
-
-            return "III";
+            return romanNumbers[index];
         }
     }
 }
