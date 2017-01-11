@@ -1,36 +1,29 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace RomanNumeralKata
 {
     public class RomanNumeralCalculator
     {
+        private readonly Dictionary<int, string> arabicToRoman = new Dictionary<int, string>
+        {
+            { 10, "X" },
+            { 9, "IX" },
+            { 5, "V" },
+            { 4, "IV" },
+            { 1, "I" }
+        };
+
         public string Calculate(int arabicNumber)
         {
-            if (arabicNumber >= 10)
+            foreach (var arabic in arabicToRoman.Keys)
             {
-                return "X";
+                if (arabicNumber >= arabic)
+                {
+                    return arabicToRoman[arabic] + Calculate(arabicNumber - arabic);
+                }
             }
-
-            if (arabicNumber >= 9)
-            {
-                return "IX";
-            }
-
-            if (arabicNumber >= 5)
-            {
-                return "V" + Calculate(arabicNumber - 5);
-            }
-
-            if (arabicNumber >= 4)
-            {
-                return "IV" + Calculate(arabicNumber - 4);
-            }
-
-            if (arabicNumber >= 1)
-            {
-                return "I" + Calculate(arabicNumber - 1);
-            }
-
+                        
             return string.Empty;
         }
     }
