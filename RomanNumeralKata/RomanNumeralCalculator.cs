@@ -2,7 +2,10 @@
 {
     public class RomanNumeralCalculator
     {
-        private readonly string[] romanNumbers = {"I", "II", "III"};
+        private readonly string[] romanNumbers =
+        {
+            "I", "II", "III", "IV"
+        };
 
         public string Calculate(int arabicNumber)
         {
