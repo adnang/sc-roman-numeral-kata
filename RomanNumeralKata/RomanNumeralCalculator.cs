@@ -9,7 +9,8 @@ namespace RomanNumeralKata
         {
             {4, "IV"},
             {5, "V"},
-            {6, "VI"}
+            {6, "VI"},
+            {7, "VII"}
         };
 
         public string Calculate(int arabicNumber)
