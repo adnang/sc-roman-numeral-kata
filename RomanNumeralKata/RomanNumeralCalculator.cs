@@ -1,12 +1,13 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace RomanNumeralKata
 {
     public class RomanNumeralCalculator
     {
-        private readonly string[] romanNumbers =
+        private readonly Dictionary<int, string> romanBy = new Dictionary<int, string>() 
         {
-            "I", "II", "III", "IV", "V"
+            {4, "IV"}, {5, "V"}
         };
 
         public string Calculate(int arabicNumber)
@@ -16,8 +17,7 @@ namespace RomanNumeralKata
                 return new string('I', arabicNumber);
             }
 
-            var index = arabicNumber - 1;
-            return romanNumbers[index];
+            return romanBy[arabicNumber];
         }
     }
 }
