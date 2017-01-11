@@ -7,6 +7,10 @@ namespace RomanNumeralKata
     {
         private readonly Dictionary<int, string> arabicToRoman = new Dictionary<int, string>
         {
+            { 1000, "C" },
+            { 500, "D" },
+            { 100, "C" },
+            { 90, "XC" },
             { 50, "L" },
             { 40, "XL" },
             { 10, "X" },
@@ -18,15 +22,21 @@ namespace RomanNumeralKata
 
         public string Calculate(int arabicNumber)
         {
-            foreach (var arabic in arabicToRoman.Keys)
+            foreach (var keyArabic in arabicToRoman.Keys)
             {
-                if (arabicNumber >= arabic)
+                if (arabicNumber >= keyArabic)
                 {
-                    return arabicToRoman[arabic] + Calculate(arabicNumber - arabic);
+                    var remainingArabic = arabicNumber - keyArabic;
+                    return RomanFrom(keyArabic) + Calculate(remainingArabic);
                 }
             }
                         
             return string.Empty;
+        }
+
+        private string RomanFrom(int arabic)
+        {
+            return arabicToRoman[arabic];
         }
     }
 }
